@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Algebra</title>
+
+<link rel="stylesheet" href="../style.css">
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+📘 Algebra
+</div>
+
+<nav>
+
+<a href="../index.html">Home</a>
+
+<a href="mathematics.html">Mathematics</a>
+
+</nav>
+
+</header>
+
+<section class="hero">
+
+<h1>📘 Algebra</h1>
+
+<p>Learn the basics of Algebra.</p>
+
+</section>
+
+<section id="subjects">
+
+<h2>📖 Lesson</h2>
+
+<div class="card">
+
+<h3>What is Algebra?</h3>
+
+<p>
+
+Algebra is a branch of mathematics that uses letters and symbols to represent numbers.
+
+Example:
+
+</p>
+
+<h2>x + 5 = 10</h2>
+
+<p>
+
+To find x:
+
+10 - 5 = 5
+
+Therefore,
+
+<b>x = 5</b>
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Worked Example</h3>
+
+<p>
+
+Solve:
+
+2x + 4 = 12
+
+</p>
+
+<p>
+
+2x = 12 - 4
+
+</p>
+
+<p>
+
+2x = 8
+
+</p>
+
+<p>
+
+x = 4
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>📝 Practice Question</h3>
+
+<p>
+
+Solve:
+
+3x = 18
+
+</p>
+
+<input id="answer" type="number" placeholder="Enter your answer">
+
+<br><br>
+
+<button onclick="checkAnswer()">
+
+Check Answer
+
+</button>
+
+<p id="result"></p>
+
+</div>
+
+</section>
+
+<footer>
+
+<p>© 2026 TobiTech Study Hub</p>
+
+</footer>
+
+<script>
+
+function checkAnswer(){
+
+let answer=document.getElementById("answer").value;
+
+let result=document.getElementById("result");
+
+if(answer==6){
+
+result.innerHTML="✅ Correct! Excellent work.";
+
+result.style.color="lime";
+
+}else{
+
+result.innerHTML="❌ Try again.";
+
+result.style.color="red";
+
+}
+
+}
+
+</script>
+
+</body>
+</html>
