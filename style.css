@@ -199,3 +199,23 @@ section{
     transform:scale(1.05);
     box-shadow:0 0 50px #38bdf8;
 }
+
+/* Pages like About and Privacy Policy */
+main {
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+}
+
+main h1 {
+    font-size: 35px;
+}
+
+main h2 {
+    font-size: 24px;
+}
+
+main p {
+    font-size: 16px;
+    line-height: 1.6;
+}
