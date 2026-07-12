@@ -89,6 +89,67 @@ button.style.transform="scale(1)";
 
 setTimeout(()=>{
 
-console.log("Welcome to Tobiloba's Portfolio 🔥");
+console.log("Welcome to Tobiloba's Study-hub 🔥");
 
 },1000);
+
+/* ========================= */
+/* Mobile Navigation */
+/* ========================= */
+
+.menu-toggle{
+    display:none;
+    font-size:28px;
+    cursor:pointer;
+    color:white;
+}
+
+@media (max-width:768px){
+
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.menu-toggle{
+    display:block;
+}
+
+.nav-links{
+    position:absolute;
+    top:65px;
+    left:0;
+    width:100%;
+    background:#111827;
+    display:none;
+    flex-direction:column;
+    text-align:center;
+    padding:20px 0;
+}
+
+.nav-links.active{
+    display:flex;
+}
+
+.nav-links li{
+    margin:15px 0;
+}
+
+header{
+    padding:12px 5%;
+}
+
+.hero{
+    padding-top:170px;
+}
+
+.hero h1{
+    font-size:40px;
+}
+
+.hero h2{
+    font-size:30px;
+}
+
+}
