@@ -1,106 +1,55 @@
-// ==========================
-// Smooth Fade-in Animation
-// ==========================
+```javascript
+// ===============================
+// TobilobaTech Academy Script
+// ===============================
 
-const sections = document.querySelectorAll("section");
 
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add("show");
+// Smooth scrolling for navigation links
+
+document.querySelectorAll("a[href^='#']").forEach(link => {
+
+    link.addEventListener("click", function(e){
+
+        e.preventDefault();
+
+        const section = document.querySelector(this.getAttribute("href"));
+
+        if(section){
+            section.scrollIntoView({
+                behavior:"smooth"
+            });
         }
+
     });
-});
-
-sections.forEach((section) => {
-    observer.observe(section);
-});
-
-// ==========================
-// Navbar Shadow on Scroll
-// ==========================
-
-window.addEventListener("scroll", () => {
-
-    const header = document.querySelector("header");
-
-    if (window.scrollY > 50) {
-        header.style.boxShadow = "0 5px 20px rgba(0,0,0,.5)";
-    } else {
-        header.style.boxShadow = "0 2px 10px rgba(0,0,0,.4)";
-    }
 
 });
 
-// ==========================
-// Typing Effect
-// ==========================
 
-const text = "Your Learning & Development Partner";
-let index = 0;
 
-const title = document.querySelector(".hero h3");
 
-if (title) {
+// Card button messages
 
-    title.innerHTML = "";
+const buttons = document.querySelectorAll(".card button");
 
-    function typeWriter() {
-
-        if (index < text.length) {
-
-            title.innerHTML += text.charAt(index);
-            index++;
-
-            setTimeout(typeWriter, 80);
-
-        }
-
-    }
-
-    typeWriter();
-
-}
-
-// ==========================
-// Button Animation
-// ==========================
-
-const buttons = document.querySelectorAll("button");
 
 buttons.forEach(button => {
 
-    button.addEventListener("mouseover", () => {
-        button.style.transform = "scale(1.08)";
-    });
+    button.addEventListener("click", function(){
 
-    button.addEventListener("mouseleave", () => {
-        button.style.transform = "scale(1)";
+        alert(
+            "This feature is coming soon to TobilobaTech Academy 🚀"
+        );
+
     });
 
 });
 
-// ==========================
-// Mobile Menu
-// ==========================
 
-const menuToggle = document.querySelector(".menu-toggle");
-const navLinks = document.querySelector(".nav-links");
 
-if (menuToggle && navLinks) {
 
-    menuToggle.addEventListener("click", () => {
-        navLinks.classList.toggle("active");
-    });
+// Welcome message
 
-}
-
-// ==========================
-// Welcome Message
-// ==========================
-
-setTimeout(() => {
-
-    console.log("Welcome to TobilobaTech 🔥");
-
-}, 1000);
+console.log(
+    "Welcome to TobilobaTech Academy 🚀"
+);
+```
