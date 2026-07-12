@@ -237,3 +237,31 @@ main p {
     line-height: 1.8;
     margin-bottom: 15px;
 }
+
+.footer {
+    background: #111827;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    margin-top: 50px;
+}
+
+.footer-links {
+    margin-bottom: 15px;
+}
+
+.footer-links a {
+    color: #60a5fa;
+    text-decoration: none;
+    margin: 0 12px;
+    font-weight: 600;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+.footer p {
+    font-size: 14px;
+    color: #d1d5db;
+}
