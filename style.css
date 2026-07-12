@@ -17,7 +17,7 @@ header{
     top:0;
     left:0;
     background:#111827;
-    padding:12px 8%;
+    padding:10px 6%;
     z-index:1000;
     box-shadow:0 2px 10px rgba(0,0,0,.4);
 }
@@ -57,7 +57,7 @@ nav ul li a:hover{
     display:flex;
     justify-content:center;
     align-items:center;
-    padding:140px 20px 80px;
+    padding:170px 20px 80px;
 }
 
 .hero h1{
