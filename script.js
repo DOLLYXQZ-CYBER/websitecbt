@@ -1,4 +1,3 @@
-```javascript
 // ===============================
 // TobilobaTech Academy Script
 // ===============================
@@ -52,4 +51,3 @@ buttons.forEach(button => {
 console.log(
     "Welcome to TobilobaTech Academy 🚀"
 );
-```
