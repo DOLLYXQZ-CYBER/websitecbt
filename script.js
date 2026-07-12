@@ -6,11 +6,9 @@ const sections = document.querySelectorAll("section");
 
 const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
-
         if (entry.isIntersecting) {
             entry.target.classList.add("show");
         }
-
     });
 });
 
@@ -27,13 +25,9 @@ window.addEventListener("scroll", () => {
     const header = document.querySelector("header");
 
     if (window.scrollY > 50) {
-
         header.style.boxShadow = "0 5px 20px rgba(0,0,0,.5)";
-
     } else {
-
-        header.style.boxShadow = "none";
-
+        header.style.boxShadow = "0 2px 10px rgba(0,0,0,.4)";
     }
 
 });
@@ -42,114 +36,71 @@ window.addEventListener("scroll", () => {
 // Typing Effect
 // ==========================
 
-const text = "Future Web Developer";
+const text = "Your Learning & Development Partner";
 let index = 0;
 
 const title = document.querySelector(".hero h3");
 
-title.innerHTML = "";
+if (title) {
 
-function typeWriter() {
+    title.innerHTML = "";
 
-    if (index < text.length) {
+    function typeWriter() {
 
-        title.innerHTML += text.charAt(index);
+        if (index < text.length) {
 
-        index++;
+            title.innerHTML += text.charAt(index);
+            index++;
 
-        setTimeout(typeWriter,80);
+            setTimeout(typeWriter, 80);
+
+        }
 
     }
 
-}
+    typeWriter();
 
-typeWriter();
+}
 
 // ==========================
 // Button Animation
 // ==========================
 
-const button = document.querySelector("button");
+const buttons = document.querySelectorAll("button");
 
-button.addEventListener("mouseover",()=>{
+buttons.forEach(button => {
 
-button.style.transform="scale(1.1)";
+    button.addEventListener("mouseover", () => {
+        button.style.transform = "scale(1.08)";
+    });
+
+    button.addEventListener("mouseleave", () => {
+        button.style.transform = "scale(1)";
+    });
 
 });
 
-button.addEventListener("mouseleave",()=>{
+// ==========================
+// Mobile Menu
+// ==========================
 
-button.style.transform="scale(1)";
+const menuToggle = document.querySelector(".menu-toggle");
+const navLinks = document.querySelector(".nav-links");
 
-});
+if (menuToggle && navLinks) {
+
+    menuToggle.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+    });
+
+}
 
 // ==========================
 // Welcome Message
 // ==========================
 
-setTimeout(()=>{
+setTimeout(() => {
 
-console.log("Welcome to Tobiloba's Study-hub 🔥");
+    console.log("Welcome to TobilobaTech 🔥");
 
-},1000);
-
-/* ========================= */
-/* Mobile Navigation */
-/* ========================= */
-
-.menu-toggle{
-    display:none;
-    font-size:28px;
-    cursor:pointer;
-    color:white;
-}
-
-@media (max-width:768px){
-
-nav{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-}
-
-.menu-toggle{
-    display:block;
-}
-
-.nav-links{
-    position:absolute;
-    top:65px;
-    left:0;
-    width:100%;
-    background:#111827;
-    display:none;
-    flex-direction:column;
-    text-align:center;
-    padding:20px 0;
-}
-
-.nav-links.active{
-    display:flex;
-}
-
-.nav-links li{
-    margin:15px 0;
-}
-
-header{
-    padding:12px 5%;
-}
-
-.hero{
-    padding-top:170px;
-}
-
-.hero h1{
-    font-size:40px;
-}
-
-.hero h2{
-    font-size:30px;
-}
-
-}
+}, 1000);
