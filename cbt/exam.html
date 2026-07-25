@@ -1,41 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JAMB CBT Exam</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-    <link rel="stylesheet" href="style.css">
+<title>JAMB CBT Exam</title>
+
+<link rel="stylesheet" href="style.css">
+
 </head>
+
 <body>
 
-<div class="container">
+<div class="exam-box">
 
-    <h1 id="subjectTitle">JAMB CBT</h1>
+<h1 id="subjectTitle">JAMB CBT</h1>
 
-    <div id="timer">
-        Time Left: <span>60:00</span>
-    </div>
+<div class="timer">
 
-    <div class="question-box">
+⏰ Time Left
 
-        <h2 id="question">
-            Loading question...
-        </h2>
-
-        <div id="answers"></div>
-
-    </div>
-
-    <div class="buttons">
-        <button id="prevBtn">Previous</button>
-        <button id="nextBtn">Next</button>
-        <button id="submitBtn">Submit</button>
-    </div>
+<span id="timer">02:00:00</span>
 
 </div>
 
-<script src="script.js"></script>
+<div class="progress">
+
+Question
+
+<span id="currentQuestion">1</span>
+
+of
+
+<span id="totalQuestions">3</span>
+
+</div>
+
+<h2 id="question"></h2>
+
+<div id="options"></div>
+
+<div class="buttons">
+
+<button id="nextBtn" class="subject-btn">
+
+Next →
+
+</button>
+
+</div>
+
+</div>
+
+<script src="exam.js"></script>
 
 </body>
+
 </html>
