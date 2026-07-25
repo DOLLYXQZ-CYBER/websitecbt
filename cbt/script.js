@@ -1,160 +1,144 @@
-const params = new URLSearchParams(window.location.search);
-const subject = params.get("subject") || "english";
+const questions=[
 
-document.getElementById("subjectTitle").textContent =
-subject.toUpperCase() + " JAMB CBT";
-
-const questions = {
-
-english: [
 {
-question: "Choose the correctly spelt word.",
-options: [
-"Accomodation",
-"Accommodation",
-"Acomodation",
-"Accommmodation"
+
+question:"HTML stands for?",
+
+options:[
+"Hyper Text Markup Language",
+"Home Tool Markup Language",
+"High Text Machine Language",
+"Hyper Tool Multi Language"
 ],
-answer: 1
+
+answer:0
+
 },
+
 {
-question: "The opposite of BRAVE is?",
-options: [
-"Strong",
-"Fearful",
-"Happy",
-"Wise"
-],
-answer: 1
-}
+
+question:"CSS stands for?",
+
+options:[
+"Cascading Style Sheets",
+"Creative Style Sheets",
+"Computer Style Sheets",
+"Coding Style Sheets"
 ],
 
-math: [
-{
-question: "2 + 3 = ?",
-options: [
-"4",
-"5",
-"6",
-"7"
-],
-answer: 1
+answer:0
+
 },
+
 {
-question: "12 × 2 = ?",
-options: [
-"22",
-"24",
-"26",
-"20"
+
+question:"JavaScript is used for?",
+
+options:[
+"Making pages interactive",
+"Creating databases",
+"Creating Operating Systems",
+"None"
 ],
-answer: 1
+
+answer:0
+
 }
-],
 
-physics: [
-{
-question: "SI unit of Force is?",
-options: [
-"Newton",
-"Joule",
-"Watt",
-"Volt"
-],
-answer: 0
-}
-],
+];
 
-chemistry: [
-{
-question: "Water is made up of?",
-options: [
-"H₂O",
-"CO₂",
-"O₂",
-"H₂"
-],
-answer: 0
-}
-],
+let current=0;
 
-biology: [
-{
-question: "Powerhouse of the cell?",
-options: [
-"Nucleus",
-"Mitochondria",
-"Ribosome",
-"Golgi body"
-],
-answer: 1
-}
-]
+const question=document.getElementById("question");
 
-};
+const options=document.getElementById("options");
 
-let current = 0;
-let score = 0;
+const next=document.getElementById("nextBtn");
 
-const questionBox = document.getElementById("question");
-const answersBox = document.getElementById("answers");
+const currentQuestion=document.getElementById("currentQuestion");
+
+const totalQuestions=document.getElementById("totalQuestions");
+
+totalQuestions.innerHTML=questions.length;
 
 function loadQuestion(){
 
-const q = questions[subject][current];
+const q=questions[current];
 
-questionBox.innerHTML =
-`${current+1}. ${q.question}`;
+question.innerHTML=q.question;
 
-answersBox.innerHTML = "";
+currentQuestion.innerHTML=current+1;
 
-q.options.forEach((option,index)=>{
+options.innerHTML="";
 
-const btn = document.createElement("button");
+q.options.forEach(option=>{
 
-btn.className="option";
+const btn=document.createElement("button");
+
+btn.className="subject-btn";
+
+btn.style.marginBottom="15px";
+
+btn.style.width="100%";
 
 btn.innerHTML=option;
 
-btn.onclick=()=>{
-
-if(index===q.answer){
-score++;
-}
-
-current++;
-
-if(current<questions[subject].length){
-
-loadQuestion();
-
-}else{
-
-questionBox.innerHTML="🎉 Exam Finished";
-
-answersBox.innerHTML=`
-<h2>Your Score</h2>
-<h1>${score}/${questions[subject].length}</h1>
-`;
-
-document.getElementById("nextBtn").style.display="none";
-document.getElementById("prevBtn").style.display="none";
-document.getElementById("submitBtn").style.display="none";
-
-}
-
-};
-
-answersBox.appendChild(btn);
+options.appendChild(btn);
 
 });
 
 }
 
+next.onclick=()=>{
+
+current++;
+
+if(current<questions.length){
+
 loadQuestion();
 
-document.getElementById("submitBtn").onclick=()=>{
+}else{
 
-alert(`Your score is ${score}/${questions[subject].length}`);
+document.querySelector(".exam-box").innerHTML=
 
-};
+`
+
+<h1>🎉 CBT Completed</h1>
+
+<h2>Well Done!</h2>
+
+<a href="index.html" class="subject-btn">
+
+Back Home
+
+</a>
+
+`;
+
+}
+
+}
+
+loadQuestion();
+
+let seconds=7200;
+
+setInterval(()=>{
+
+seconds--;
+
+let h=Math.floor(seconds/3600);
+
+let m=Math.floor((seconds%3600)/60);
+
+let s=seconds%60;
+
+document.getElementById("timer").innerHTML=
+
+String(h).padStart(2,"0")+":"+
+
+String(m).padStart(2,"0")+":"+
+
+String(s).padStart(2,"0");
+
+},1000);
