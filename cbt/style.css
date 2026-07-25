@@ -175,3 +175,21 @@ box-shadow:0 0 15px #FFD700;
 
 animation:glow 2s infinite;
 }
+.home-btn{
+display:inline-block;
+margin-bottom:25px;
+padding:10px 20px;
+background:#1e88ff;
+color:#fff;
+text-decoration:none;
+border-radius:10px;
+font-weight:bold;
+box-shadow:0 0 20px #00d4ff;
+transition:.3s;
+}
+
+.home-btn:hover{
+background:#0b6cff;
+transform:translateY(-3px);
+box-shadow:0 0 35px #00d4ff;
+}
